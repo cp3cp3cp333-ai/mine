@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#8bdcf5" />
+    <meta name="description" content="晴空牧场：轻松的固定布局消除闯关游戏原型" />
+    <title>晴空牧场 · 救救小羊</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="sky-decor sky-decor--one" aria-hidden="true"></div>
+      <div class="sky-decor sky-decor--two" aria-hidden="true"></div>
+      <header class="topbar">
+        <div class="brand-mark"><span class="brand-mark__leaf">⌁</span> 晴空牧场</div>
+        <div class="topbar__actions">
+          <button class="icon-button" id="sound-button" aria-label="切换音效">♫</button>
+          <button class="icon-button" id="help-button" aria-label="查看玩法">?</button>
+        </div>
+      </header>
+
+      <main class="game-page">
+        <section class="level-heading">
+          <div>
+            <p class="eyebrow">救救小羊</p>
+            <h1>初见 · 第 <span id="level-number">1</span> 关</h1>
+          </div>
+          <div class="progress-pill" aria-label="关卡进度">
+            <span class="progress-pill__sheep">🐑</span>
+            <span id="level-progress">0/3</span>
+          </div>
+        </section>
+
+        <section class="board-card" aria-label="游戏棋盘">
+          <div class="board-card__tip" id="board-tip">点击一列，再点击目标列</div>
+          <div class="board" id="board" role="grid" aria-label="固定棋盘"></div>
+          <div class="board-card__legend">
+            <span><i class="legend-dot legend-dot--selected"></i>已选择</span>
+            <span><i class="legend-dot legend-dot--locked"></i>已锁定</span>
+            <span class="legend-empty"><b id="empty-count">12</b> 个空位</span>
+          </div>
+        </section>
+
+        <section class="sheep-zone panel-section" aria-label="小羊篮子">
+          <div class="section-title-row">
+            <div>
+              <h2>小羊区</h2>
+              <p>露头的小羊会自动回到篮子里</p>
+            </div>
+            <span class="section-count" id="sheep-count">0/4</span>
+          </div>
+          <div class="sheep-baskets" id="sheep-baskets"></div>
+        </section>
+
+        <section class="temporary-zone panel-section" aria-label="临时空位">
+          <div class="section-title-row">
+            <div>
+              <h2>临时空位</h2>
+              <p>先放一下，再找同色列</p>
+            </div>
+            <button class="watch-button" data-ad-action="temp" type="button"><span>▶</span> 看广告 +1</button>
+          </div>
+          <div class="temporary-slots" id="temporary-slots"></div>
+        </section>
+
+        <section class="tools-zone panel-section" aria-label="道具">
+          <h2>牧场道具</h2>
+          <div class="tool-grid">
+            <button class="tool-button" id="shuffle-button" type="button">
+              <span class="tool-icon">↝</span>
+              <span>整理</span>
+              <small>广告可用</small>
+            </button>
+            <button class="tool-button" id="undo-button" type="button">
+              <span class="tool-icon">↶</span>
+              <span>撤回</span>
+              <small>广告可用</small>
+            </button>
+          </div>
+        </section>
+
+        <section class="level-strip" aria-label="关卡选择">
+          <button class="level-arrow" id="prev-level" type="button" aria-label="上一关">‹</button>
+          <div class="level-dots" id="level-dots"></div>
+          <button class="level-arrow" id="next-level" type="button" aria-label="下一关">›</button>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section class="modal" id="game-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal__icon" id="modal-icon">🌿</div>
+        <h2 id="modal-title">牧场提示</h2>
+        <p id="modal-copy"></p>
+        <div class="modal__actions" id="modal-actions"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>

@@ -24,3 +24,9 @@ python3 -m http.server 4173
 - 无可行移动时弹出失败框，可看广告增加临时位后继续。
 
 关卡布局集中在 `game.js` 的 `LEVELS` 中，列数组按“底部到顶部”书写。新增关卡时请保持普通棋子数量为行数的整数倍，并将棋盘容量与空位校验一起更新。
+
+## 发布到网页
+
+仓库内的 `.github/workflows/pages.yml` 会在 `main` 更新后自动打包并发布到 GitHub Pages。第一次发布需要仓库管理员在 GitHub 的 **Settings → Pages** 中将发布来源设为 **GitHub Actions**；发布完成后地址为：
+
+`https://cp3cp3cp333-ai.github.io/mine/`

@@ -1,0 +1,8 @@
+# Godot editor cache and generated Android template sources
+godot/.godot/
+godot/android/
+# Generated local APKs are delivered from the workspace, not committed
+godot/build/
+# Godot generated resource metadata
+godot/*.uid
+godot/*.import

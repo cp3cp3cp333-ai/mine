@@ -1,0 +1,30 @@
+; Engine configuration file.
+; Sunny Pasture is a dependency-free Godot 4 project.
+
+config_version=5
+
+[application]
+config/name="晴空牧场 · 救救小羊"
+run/main_scene="res://main.tscn"
+config/icon="res://icon.svg"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.54, 0.84, 0.95, 1)
+boot_splash/image=""
+
+[display]
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/size/window_width_override=540
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.54, 0.84, 0.95, 1)
+
+[gui]
+theme/default_font_multichannel_signed_distance_field=true

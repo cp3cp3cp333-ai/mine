@@ -30,3 +30,15 @@ python3 -m http.server 4173
 仓库内的 `.github/workflows/pages.yml` 会在 `main` 更新后自动打包并发布到 GitHub Pages。第一次发布需要仓库管理员在 GitHub 的 **Settings → Pages** 中将发布来源设为 **GitHub Actions**；发布完成后地址为：
 
 `https://cp3cp3cp333-ai.github.io/mine/`
+
+## Godot 本地工程与 APK
+
+Godot 工程在 [`godot/`](godot/) 目录，使用 Godot 4.3+ 打开 `project.godot` 即可运行。当前第 1 关固定为 5 列 × 6 行，竖屏视口 540 × 960，并实现列顶部同类棋子选择、目标列容量限制、满列锁定、临时位、整理、撤回、卡死提示和重玩。
+
+导出 Android 调试包前，在 Godot 的 **Editor → Editor Settings → Export → Android** 配置 Android SDK、JDK 和导出模板，然后执行：
+
+```bash
+godot --path godot --export-debug Android godot/build/sunny-pasture-debug.apk
+```
+
+本次已生成并校验的 APK：[`godot/build/sunny-pasture-debug.apk`](godot/build/sunny-pasture-debug.apk)。它是 arm64 调试包，已通过 Android v2/v3 签名校验，可直接安装到支持 arm64 的 Android 手机进行体验。
